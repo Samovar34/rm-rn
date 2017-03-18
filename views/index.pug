@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .container
+    header
+      h1 Добро пожаловать на RM-RN
+    .row
+      .col.half
+        h2 input
+        div
+          textarea.user-input#input
+        .control
+          button.btn.reset-btn#clinput Очистить
+          button.btn.run-btn#start Поехали
+      .col.half
+        h2 output
+        .div
+          textarea.user-input#result
+        .control
+          button.btn.reset-btn#clresult Очистить
+  footer
+    span unscript 2017
+
+  script(src="/js/app.js")
