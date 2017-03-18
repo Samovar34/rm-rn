@@ -4,7 +4,7 @@ const fs = require("fs");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'RM-RN' });
 });
 
 router.post("/", function (req, res, next) {
