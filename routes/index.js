@@ -17,7 +17,7 @@ router.post("/", function (req, res, next) {
 
   req.on("end", function () {
     console.log("SRC ", reqBody);
-    var result = reqBody.replace(/[\r\n]/g, ' ');
+    var result = reqBody.replace(/[\r\n]+/g, ' ');
     console.log("RES ", result);
     res.end(result);
   });
