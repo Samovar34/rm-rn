@@ -88,7 +88,7 @@
         startBtn.removeAttribute("disabled");
     }
 
-    // Проверяет высоту экрана и подсраивает футер
+    // Проверяет высоту экрана и подсраиваем футер
     function locateFooter () {
         if (window.innerHeight < 490) {
             footer.classList.add("fix");
