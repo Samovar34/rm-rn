@@ -38,6 +38,7 @@
                 clearInput();
             }
         };
+        xhttp.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
         xhttp.open("POST", "/", true);
         xhttp.send(inputEl.value);
         console.log("send");
