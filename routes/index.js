@@ -7,19 +7,26 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'RM-RN' });
 });
 
+// обработка строки
 router.post("/", function (req, res, next) {
  //res.status = 200;
 
   var reqBody = "";
+
+  // извлечь данные
   req.on('data', (chunk) => {
     reqBody += chunk;
   });
 
+  // как только все прочитано, обработать и ответить
   req.on("end", function () {
-    console.log("SRC ", reqBody);
+    res.setHeader("Content-Type", "text/plain,charset=UTF-8")
     var result = reqBody.replace(/[\r\n]+/g, ' ');
-    console.log("RES ", result);
     res.end(result);
+  });
+
+  req.on("error", function (err) {
+    next(err);
   });
   
 });
