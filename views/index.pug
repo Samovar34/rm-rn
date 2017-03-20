@@ -1,24 +1,30 @@
 extends layout
 
 block content
-  .container
-    header
-      h1 Добро пожаловать на RM-RN
+  .container.js-hook
+    header.row
+      .col
+        div.h-wpar
+          h1 Добро пожаловать на RM-RN
+          p Заменяем символы \r\n на пробел
     .row
       .col.half
-        h2 input
+        h3 input
         div
           textarea.user-input#input
         .control
           button.btn.reset-btn#clinput Очистить
           button.btn.run-btn#start Поехали
       .col.half
-        h2 output
+        h3 output
         .div
           textarea.user-input#result
         .control
           button.btn.reset-btn#clresult Очистить
-  footer
-    span unscript 2017
+  footer.container
+    div.row
+      div.col
+        .f-wrap
+          span unscript 2017
 
   script(src="/js/app.js")

@@ -6,8 +6,11 @@
         resultEl = document.getElementById("result"),
         startBtn = document.getElementById("start"),
         resetInputBtn = document.getElementById("clinput"),
-        resetResultBtn = document.getElementById("clresult");
+        resetResultBtn = document.getElementById("clresult"),
         footer = document.getElementsByTagName("footer")[0];
+
+    var jsHook = document.getElementsByClassName("js-hook")[0];
+
 
     resetInputBtn.onclick = clearInput;
 
@@ -69,7 +72,7 @@
         xhttp.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 
         xhttp.send(inputEl.value);
-        console.log("send");
+
         disableStartBtn();
     }
 
@@ -90,10 +93,11 @@
 
     // Проверяет высоту экрана и подсраиваем футер
     function locateFooter () {
-        if (window.innerHeight < 490) {
-            footer.classList.add("fix");
+        // если высота окна больше чем содержимое рабочей области, то отобразить футер внизу экрана
+        if (window.innerHeight > jsHook.offsetHeight + jsHook.offsetTop + 80) {
+            footer.classList.add("f-fix");
         } else {
-            footer.classList.remove("fix");
+            footer.classList.remove("f-fix");
         }
     }
 })();
